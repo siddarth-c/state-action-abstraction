@@ -1,4 +1,3 @@
-# docs and experiment results can be found at https://docs.cleanrl.dev/rl-algorithms/dqn/#dqn_jaxpy
 import os
 import random
 import time
@@ -25,7 +24,7 @@ from flax.training import orbax_utils
 
 os.environ[
     "XLA_PYTHON_CLIENT_MEM_FRACTION"
-] = "0.7"  # see https://github.com/google/jax/discussions/6332#discussioncomment-1279991
+] = "0.7"
 
 from homo_grid import HomoEnv, CustomRewardAndTransition, CustomRGBImgObsWrapper
 
@@ -302,7 +301,6 @@ if __name__ == "__main__":
 
         rb.add(obs, next_obs, action, reward, terminated, info)
 
-        # TRY NOT TO MODIFY: CRUCIAL step easy to overlook
         obs = next_obs
 
         if terminated or truncated:
